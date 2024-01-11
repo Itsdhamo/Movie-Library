@@ -1,0 +1,19 @@
+h1{
+	text-align: center;
+	color: blue;
+}
+#table{
+	border: 2px solid black;
+	margin-top: 25px;
+	margin-left: 100px;
+	border-collapse: collapse;
+	background-color: moccasin;
+	color: darkblue;
+    text-align: center;
+}
+#addmovie{
+	padding-left: 560px;
+}
+.common{
+	width: 100px;
+}

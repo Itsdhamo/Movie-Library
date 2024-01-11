@@ -1,0 +1,30 @@
+h1{
+	margin-top: 180px;
+	color: honeydew;
+	text-align: center;
+}
+div{
+	border: 1px solid black;
+	background-image: url(https://t4.ftcdn.net/jpg/01/19/11/55/360_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg);
+     background-size: cover;
+	 background-position: center;
+	 height: 598px;
+	line-height: 50px;
+}
+#email{
+	margin-left: 24px;
+}
+.input{
+	color: black;
+	margin-left: 475px;
+ }
+#submit{
+	margin-left: 580px;
+}
+p{
+	color: red;
+	text-align: center;
+	font-size:30px;
+	margin-left: 40px;
+}
+ 

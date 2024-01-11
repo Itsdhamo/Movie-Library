@@ -1,0 +1,12 @@
+div{
+	background-image: url(https://www.mtu.edu/diversity-center/resources/lending-library/images/movie-card800.jpg);
+	background-size:cover;
+	 background-position: center;
+	 height: 598px;
+	line-height: 50px;
+}
+.user{
+	margin-left: 600px;
+	margin-top: 800px;
+	font-size: 60px;
+}

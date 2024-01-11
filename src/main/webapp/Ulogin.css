@@ -1,0 +1,23 @@
+h1{
+	margin-top: 180px;
+	color: white;
+	text-align: center;
+}
+div{
+	border: 1px solid black;
+	background-image: url(https://img.freepik.com/premium-vector/network-connection-background-abstract-style_23-2148875738.jpg);
+     background-size: cover;
+	 background-position: center;
+	 height: 598px;
+	line-height: 50px;
+}
+#email{
+	margin-left: 24px;
+}
+.input{
+	margin-left: 500px;
+	color: white;
+}
+#submit{
+	margin-left: 580px;
+}

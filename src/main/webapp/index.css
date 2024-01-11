@@ -1,0 +1,22 @@
+body{
+	background-image: url(https://library.qprc.nsw.gov.au/Images/UserUploadedImages/1508/Event%20-%20Movie%20Braidwood.jpg);
+	 background-size: cover;
+	 background-position: center;
+}
+div{
+	border: 10px solid darkgray;
+	background-color: blanchedalmond	;
+	height: 200px;
+	width: 350px;
+	margin-left: 430px;
+	margin-top: 180px;
+	opacity: 0.9;
+}
+#head{
+	color: black;
+	font-style:italic;
+	text-align: center;
+}
+.module{
+	padding-left: 150px;
+}
