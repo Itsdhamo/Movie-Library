@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.swing.text.DefaultEditorKit.DefaultKeyTypedAction;
 
 import dao.Dao;
@@ -25,12 +26,15 @@ public class AdminLogin  extends HttpServlet{
 			Admin admin=dao.findbyEmail(adminmail);
 			if(admin!=null) {
 				if(admin.getAdminpassword().equals(adminpassword)) {
+					HttpSession session=req.getSession();
+					session.setAttribute("adminname",admin.getAdminname());
+					req.setAttribute("adminname",admin.getAdminname());
 					req.setAttribute("movies",dao.getAllMovies());
 					RequestDispatcher rd=req.getRequestDispatcher("Home.jsp");
 					rd.include(req, resp);
 				}
 				else {
-					req.setAttribute("message","password is wrong...");
+					req.setAttribute("message","Wrong Password");
 					RequestDispatcher rd=req.getRequestDispatcher("Alogin.jsp");
 					rd.include(req, resp);
 				}

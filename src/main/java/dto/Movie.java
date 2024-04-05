@@ -1,5 +1,7 @@
 package dto;
 
+import java.util.Arrays;
+
 public class Movie {
 private int movieid;
 private String moviename;
@@ -8,6 +10,8 @@ private double movieratings;
 private String moviegeneres;
 private String movielanguage;
 private byte[] movieimage;
+private byte[] movieimage1;
+private byte[] movieimage2;
 public int getMovieid() {
 	return movieid;
 }
@@ -49,6 +53,24 @@ public byte[] getMovieimage() {
 }
 public void setMovieimage(byte[] movieimage) {
 	this.movieimage = movieimage;
+}
+public byte[] getMovieimage1() {
+	return movieimage1;
+}
+public void setMovieimage1(byte[] movieimage1) {
+	this.movieimage1 = movieimage1;
+}
+public byte[] getMovieimage2() {
+	return movieimage2;
+}
+public void setMovieimage2(byte[] movieimage2) {
+	this.movieimage2 = movieimage2;
+}
+@Override
+public String toString() {
+	return "Movie [movieid=" + movieid + ", moviename=" + moviename + ", movieprice=" + movieprice + ", movieratings="
+			+ movieratings + ", moviegeneres=" + moviegeneres + ", movielanguage=" + movielanguage + ", movieimage="
+			+ Arrays.toString(movieimage) + "]";
 }
 
 }

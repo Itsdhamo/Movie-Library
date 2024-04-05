@@ -26,6 +26,8 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 	 String moviegeneres=req.getParameter("moviegeneres");
 	 String movielanguage=req.getParameter("movielanguage");
 	 Part imagepart=req.getPart("movieimage");
+	 Part imagepart1=req.getPart("movieimage1");
+	 Part imagepart2=req.getPart("movieimage2");
 	 
 	 Movie movie=new Movie();
 	 movie.setMovieid(movieid);
@@ -35,6 +37,8 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 	 movie.setMoviegeneres(moviegeneres);
 	 movie.setMovielanguage(movielanguage);
 	 movie.setMovieimage(imagepart.getInputStream().readAllBytes());
+	 movie.setMovieimage1(imagepart1.getInputStream().readAllBytes());
+	 movie.setMovieimage2(imagepart2.getInputStream().readAllBytes());
 	 
 	 Dao dao=new Dao();
 	 try {
@@ -42,18 +46,51 @@ protected void service(HttpServletRequest req, HttpServletResponse resp) throws 
 			 movie.setMovieimage(imagepart.getInputStream().readAllBytes());
 		dao.updatemovie(movie);
 		req.setAttribute("movies", dao.getAllMovies());
-		 RequestDispatcher rd=req.getRequestDispatcher("Home.jsp");
-		 rd.include(req, resp);}
+		 RequestDispatcher rd1=req.getRequestDispatcher("Home.jsp");
+		 rd1.include(req, resp);
+		 }
 		 else {
 			 Movie dbmovie=dao.findMovieByid(movieid);
 			 movie.setMovieimage(dbmovie.getMovieimage());
 			 dao.updatemovie(movie);
 			 
 			 req.setAttribute("movies",dao.getAllMovies());
-			 RequestDispatcher rd=req.getRequestDispatcher("Home.jsp");
-			 rd.include(req, resp);
-			 
+			 RequestDispatcher rd6=req.getRequestDispatcher("Home.jsp");
+			 rd6.include(req, resp);	 
+		 } 
+		 if(imagepart1.getSize()>0) {	 
+			 movie.setMovieimage(imagepart1.getInputStream().readAllBytes());
+		dao.updatemovie(movie);
+		req.setAttribute("movies", dao.getAllMovies());
+		 RequestDispatcher rd2=req.getRequestDispatcher("Home.jsp");
+		 rd2.include(req, resp);
 		 }
+		 else {
+			 Movie dbmovie=dao.findMovieByid(movieid);
+			 movie.setMovieimage1(dbmovie.getMovieimage1());
+			 dao.updatemovie(movie);
+			 
+			 req.setAttribute("movies",dao.getAllMovies());
+			 RequestDispatcher rd5=req.getRequestDispatcher("Home.jsp");
+			 rd5.include(req, resp); 
+		 }
+		 if(imagepart2.getSize()>0) {
+			 movie.setMovieimage(imagepart2.getInputStream().readAllBytes());
+		dao.updatemovie(movie);
+		req.setAttribute("movies", dao.getAllMovies());
+		 RequestDispatcher rd3=req.getRequestDispatcher("Home.jsp");
+		 rd3.include(req, resp);}
+		 else {
+			 Movie dbmovie=dao.findMovieByid(movieid);
+			 movie.setMovieimage2(dbmovie.getMovieimage2());
+			 dao.updatemovie(movie);
+			 
+			 req.setAttribute("movies",dao.getAllMovies());
+			 RequestDispatcher rd4=req.getRequestDispatcher("Home.jsp");
+			 rd4.include(req, resp); 
+		 }
+		  
+		 
 	} catch (ClassNotFoundException | SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
